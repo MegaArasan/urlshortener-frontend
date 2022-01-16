@@ -90,8 +90,8 @@ export function Userdata() {
                 <Card
                   sx={{
                     maxWidth: 245,
-                    padding: "10px",
-                    maxHeight: 320,
+                    padding: "10px",  
+                    maxHeight: 330,
                     margin: "1rem",
                   }}
                   key={_id}
