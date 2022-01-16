@@ -1,38 +1,74 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Aladin&family=Roboto+Condensed&family=The+Nautigal:wght@700&family=Yellowtail&display=swap");
+
+.signuppage,
+.loginpage,
+.forgotpage,
+.resetpage {
+  height: 100vh;
+  background-image: url(https://medatech.com/wp-content/uploads/2017/11/Website-Background.png);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.formcontainer {
+  background: rgba(240, 242, 247, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  max-width: 320px;
+  border-radius: 15px;
+  padding: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* dashboard */
+.link,
+.link:hover {
   color: white;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.dashboard,
+.editdashboard {
+  /* width: 53rem; */
+  margin: 5rem;
+  padding: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* dashboard */
+.urlbox1 {
+  max-width: 35.8rem;
+  width: 100%;
+}
+.urlbox2 {
+  max-width: 30rem;
+  width: 100%;
+}
+.urlpage {
+  display: flex;
+  margin: 5px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background: rgba(155, 155, 155, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+@media (max-width: 400px) {
+  .signuppage {
+    height: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .formcontainer {
+    padding: 2px;
+  }
+}
+@media (max-width: 494px) {
+  .dashboard,
+  .editdashboard {
+    margin: 0%;
   }
 }
