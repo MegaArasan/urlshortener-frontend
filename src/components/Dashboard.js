@@ -46,7 +46,7 @@ export function Dashboard({ setName }) {
       validationSchema: validation,
       onSubmit: (urlData) => {
         callDB(urlData);
-        console.log(urlData);
+        // console.log(urlData);
       }, // Arrow Function
     });
 
@@ -83,7 +83,7 @@ export function Dashboard({ setName }) {
     })
       .then((response) => response.json())
       .then((x) => {
-        console.log(x);
+        // console.log(x);
         setShortUrl(x.shortUrl);
         setMessage({ msg: x.Msg, result: "success" });
       })
@@ -97,7 +97,7 @@ export function Dashboard({ setName }) {
     if (responseData) {
       const { email } = responseData;
       const { url, customUrl } = urlData;
-      console.log(email, url, customUrl);
+      // console.log(email, url, customUrl);
       getUrl({ email, url, customUrl });
     }
   };

@@ -20,7 +20,7 @@ export function Update() {
     fetch(`http://localhost:2000/geturl/${id}`, { method: "GET" })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setData(data);
       });
   };
@@ -66,7 +66,7 @@ function UpdateURL({ data }) {
     })
       .then((response) => response)
       .then((data) => {
-        console.log(data.status);
+        // console.log(data.status);
         if (data.status === 200) {
           setMessage({ msg: "Url updated successfully", result: "success" });
         } else {
