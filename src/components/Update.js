@@ -137,7 +137,7 @@ function UpdateURL({ data }) {
         />
         {/* Save Button */}
         <Button
-          sx={{ width: "35%",margin:"7px" }}
+          sx={{ width: "35%", margin: "7px" }}
           type="submit"
           variant="contained"
           color="success"
@@ -153,10 +153,9 @@ function UpdateURL({ data }) {
         >
           Cancel
         </Button>
-        </form>
-        {/* Cancel */}
-      
-     
+      </form>
+      {/* Cancel */}
+
       {/* Snack Bar */}
       <Stack spacing={2} sx={{ width: "100%" }}>
         <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
