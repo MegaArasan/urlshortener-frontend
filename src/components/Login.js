@@ -10,6 +10,7 @@ import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import {API_URL} from "../globalconstant.js";
 
 export function Login() {
   const [open, setOpen] = React.useState(false);
@@ -44,7 +45,7 @@ export function Login() {
   };
 
   const Login = (User) => {
-    fetch(`http://localhost:2000/users/login`, {
+    fetch(`${API_URL}/users/login`, {
       method: "POST",
       body: JSON.stringify(User),
       headers: { "Content-Type": "application/json" },

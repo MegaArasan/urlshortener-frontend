@@ -16,6 +16,7 @@ import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { Link } from "@mui/material";
+import { API_URL } from "../globalconstant.js";
 
 export function Userdata() {
   const history = useHistory();
@@ -39,7 +40,7 @@ export function Userdata() {
   // const linkstyle = { color: mode === "light" && "#1976d2" }; // URL Styles
 
   const getData = () => {
-    fetch(`http://localhost:2000/users/userdata`, {
+    fetch(`${API_URL}/users/userdata`, {
       method: "GET",
       headers: { "x-auth-token": token },
     })
@@ -53,7 +54,7 @@ export function Userdata() {
 
   // URL Delete
   const remove = (_id) => {
-    fetch(`http://localhost:2000/deleteurl/${_id}`, {
+    fetch(`${API_URL}/deleteurl/${_id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -90,7 +91,7 @@ export function Userdata() {
                 <Card
                   sx={{
                     maxWidth: 245,
-                    padding: "10px",  
+                    padding: "10px",
                     maxHeight: 330,
                     margin: "1rem",
                   }}
@@ -208,9 +209,13 @@ function Info({ lastUpdated, usedCount, deleteUrl, shortUrl, editUrl }) {
       </IconButton>
       {showinfo === "show" && (
         <div className="urldetails">
-          <Typography variant="h6">last Updated</Typography>
-          <Typography variant="h6">{lastUpdated}</Typography>
-          <Typography variant="h6">Clicks: {usedCount}</Typography>
+          <Typography variant="p">last Updated</Typography>
+          <br />
+          <Typography variant="p">{lastUpdated}</Typography>
+          <br />
+          <Typography variant="p">
+            <b>Clicks:</b> {usedCount}
+          </Typography>
         </div>
       )}
     </div>

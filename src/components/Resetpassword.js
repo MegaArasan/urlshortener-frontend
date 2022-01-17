@@ -7,6 +7,7 @@ import { useParams, useHistory } from "react-router-dom";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import React from "react";
+import { API_URL } from "../globalconstant.js";
 
 export function ResetPassword() {
   const history = useHistory();
@@ -34,7 +35,7 @@ export function ResetPassword() {
       },
     });
   const user = (updatepass) => {
-    fetch(`http://localhost:2000/users/resetpassword`, {
+    fetch(`${API_URL}/users/resetpassword`, {
       method: "POST",
       body: JSON.stringify(updatepass),
       headers: { "Content-Type": "application/json" },

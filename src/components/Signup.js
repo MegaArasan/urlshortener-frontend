@@ -10,6 +10,7 @@ import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import { API_URL } from "../globalconstant.js";
 
 export function Signup() {
   const [open, setOpen] = React.useState(false);
@@ -47,7 +48,7 @@ export function Signup() {
     setText((text) => (text === "Show" ? "Hide" : "Show"));
   };
   const addUser = (newUser) => {
-    fetch(`http://localhost:2000/users/signup`, {
+    fetch(`${API_URL}/users/signup`, {
       method: "POST",
       body: JSON.stringify(newUser),
       headers: { "Content-Type": "application/json" },

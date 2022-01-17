@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
-
-// Material UI
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
@@ -12,6 +10,7 @@ import { forwardRef } from "react";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import { API_URL } from "../globalconstant.js";
 
 export function Dashboard({ setName }) {
   // Snackbar
@@ -60,7 +59,7 @@ export function Dashboard({ setName }) {
 
   const token = localStorage.getItem("token");
   const getData = () => {
-    fetch(`http://localhost:2000/users/getdata`, {
+    fetch(`${API_URL}/users/getdata`, {
       method: "GET",
       headers: { "x-auth-token": token },
     })
@@ -76,7 +75,7 @@ export function Dashboard({ setName }) {
 
   // To create Short URL
   const getUrl = (userData) => {
-    fetch(`http://localhost:2000/url`, {
+    fetch(`${API_URL}/url`, {
       method: "POST",
       body: JSON.stringify(userData),
       headers: { "Content-type": "application/json" },

@@ -12,6 +12,7 @@ import Paper from "@mui/material/Paper";
 import { useState } from "react";
 import { Update } from "./components/Update.js";
 import { Navbar } from "./Navbar.js";
+import { API_URL } from "./globalconstant.js";
 
 export default function App() {
   const [mode, setMode] = useState("light");
@@ -72,7 +73,7 @@ export default function App() {
 
 function Activation() {
   const { id } = useParams();
-  return fetch(`http://localhost:2000/users/twostepverification`, {
+  return fetch(`${API_URL}/users/twostepverification`, {
     method: "GET",
     headers: { "x-auth-token": id },
   })
@@ -96,7 +97,7 @@ function Updatepassword({ id }) {
   // const { history } = useHistory();
   // console.log(id);
   const Result = (id) => {
-    fetch(`http://localhost:2000/users/forgotpassword/verify`, {
+    fetch(`${API_URL}/users/forgotpassword/verify`, {
       method: "GET",
       headers: { "x-auth-token": id },
     })

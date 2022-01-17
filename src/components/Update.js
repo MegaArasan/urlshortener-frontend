@@ -9,6 +9,7 @@ import { forwardRef } from "react";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import { API_URL } from "../globalconstant.js";
 
 export function Update() {
   const { id } = useParams(); // ObjectId of individual URL
@@ -17,7 +18,7 @@ export function Update() {
 
   const getData = () => {
     // Getting URL by ID
-    fetch(`http://localhost:2000/geturl/${id}`, { method: "GET" })
+    fetch(`${API_URL}/geturl/${id}`, { method: "GET" })
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
@@ -59,7 +60,7 @@ function UpdateURL({ data }) {
   };
 
   const Update = (url) => {
-    fetch(`http://localhost:2000/editurl`, {
+    fetch(`${API_URL}/editurl`, {
       method: "PUT",
       body: JSON.stringify(url),
       headers: { "Content-type": "application/json" },

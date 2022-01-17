@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-// import { useHistory } from "react-router-dom";
+import { API_URL } from "../globalconstant.js";
 
 export function ForgotPassword() {
   const [open, setOpen] = React.useState(false);
@@ -32,7 +32,7 @@ export function ForgotPassword() {
     });
 
   const forgotpass = (email) => {
-    fetch(`http://localhost:2000/users/forgotpassword`, {
+    fetch(`${API_URL}/users/forgotpassword`, {
       method: "POST",
       body: JSON.stringify(email),
       headers: { "Content-Type": "application/json" },
